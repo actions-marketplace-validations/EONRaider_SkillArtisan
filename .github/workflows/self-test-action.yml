@@ -8,11 +8,14 @@ name: Self-test audit action
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   audit-report-only:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Run SkillArtisan audit (report only, no API key)
         uses: ./
